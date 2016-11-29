@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Messages</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="css/messages.css">
+</head>
+<body>
+	<nav class="navbar w3-blue">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				</button>
+				<a class="navbar-brand" href="#">
+					<img src="http://www.placehold.it/300x50?text=Logo" alt="">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-right" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="profile.html"><span class="glyphicon glyphicon-user"></span> John Doe</a></li>
+
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<span class="glyphicon glyphicon-search"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<input type="text" class="form-control" placeholder="Start typing..." onkeyup="window.location.href='search.html'">
+						</ul>
+					</li>
+
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<span class="glyphicon glyphicon-inbox"></span>
+							<span class="label w3-black">1</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="messages.html"><b>Jane Doe</b> Can you loan me $200 dining dollars?</a></li>
+							<li><a href="messages.html" class="text-center">View All</a></li>
+						</ul>
+					</li>
+
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<span class="glyphicon glyphicon-bell"></span>
+							<span class="label w3-black">3</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="friends.html"><small>11/13</small> Jane Doe added you as a friend</a></li>
+							<li><a href="messages.html"><small>11/12</small> You have 4 new messages</a></li>
+							<li><a href="requests.html"><small>11/11</small> You have 2 financial aid requests</a></li>
+						</ul>
+					</li>
+					<li><a href="friends.html"><i class="fa fa-users" aria-hidden="true"></i></a></li>
+					<li><a href="transactions.html"><i class="fa fa-check" aria-hidden="true"></i></a></li>
+					<li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main class="container">
+		<div class="row">
+			<!-- List of all messages -->
+			<div class="col-lg-3 side-nav">
+				<div>
+					John Smith
+					<span style="float:right" class="label w3-black">4</span>
+				</div>
+				<hr>
+				<div>
+					Jane Doe
+					<span style="float:right" class="label w3-black">3</span>
+				</div>
+				<hr>
+				<div>
+					Dr. Ruby
+					<span style="float:right" class="label w3-black">2</span>
+				</div>
+				<hr>
+				<div>
+					Professor Christov
+					<span style="float:right" class="label w3-black">1</span>
+				</div>
+				<hr>
+			</div>
+
+			<!-- Active message window -->
+			<div class="col-lg-9 main-content">
+				<h1 class="page-header">John Smith</h1>
+				
+				<div class="message-box" style="overflow-y: scroll;height:300px">
+					<div class="left w3-blue w3-btn message">
+						Hello, are you still selling dining dollars?
+					</div>
+					<div class="right bg-gray w3-btn message">
+						Yea! How much do you want to buy?
+					</div>
+					<div class="left w3-blue w3-btn message text-left">
+						I ate way too much and I need enough to last <br>another 2 months. Can I buy $200?
+					</div>
+					<div class="right bg-gray w3-btn message text-right">
+						Sure no problem! When would you like to meet at<br> the library to transfer?
+					</div>
+					<div class="left w3-blue w3-btn message text-left">
+						Tomorrow at 2?
+					</div>
+					<div class="right bg-gray w3-btn message text-right">
+						Perfect, see you then
+					</div>
+				</div>
+
+				<div class="message-input-box" id="message" style="">
+					<div class="row">
+						<div class="col-lg-10">
+							<input type="text" placeholder="Type message here..." class="form-control" id="message-text">
+						</div>
+						<div class="col-lg-2">
+							<button class="w3-btn w3-blue" id="send" onclick="sendMessage()">Send</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</main>
+
+	<div class="bottom"></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script>
+		function sendMessage(){
+			var message = $("#message-text").val();
+			$("#message-text").val("");
+			$(".message-box").append("<div class='right bg-gray w3-btn message text-right'>" + message + "</div>");
+			$('.message-box').stop().animate({
+				scrollTop: $('.message-box')[0].scrollHeight
+			}, 800);
+
+		}
+
+		$('.message-box').stop().animate({
+			scrollTop: $('.message-box')[0].scrollHeight
+		}, 800);
+	</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+*{
+	/*outline: 1px red solid;*/
+}
+html, body{
+	height: 100%;
+	width: 100%;
+}
+header{
+	margin: 0;
+	padding-top: 0;
+}
+.jumbotron{
+	margin: 0;
+}
+
+/* Navigation */
+.navbar{
+	padding: 10px 10px;
+	margin: 0;
+}
+.navbar-nav{
+	padding-top: 5px;
+	padding-right: 20px;
+}
+.navbar-brand{
+	padding: 0;
+	margin:0;
+}
+.right{
+	float: right;
+}
+
+.login-input{
+	margin-top: 0;
+	padding: 0;
+	margin-right: 20px;
+}
+
+/* Header */
+.bg-dark-gray{
+	background-color: #C6C6C6;
+}
+.register-section{
+	height: 100%;
+	padding-right: 2%;
+	padding-bottom: 20px;
+}
+.register-section input{
+	margin-bottom: 2%;
+}
+.clear{
+	clear: both;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0; 
+}
+header hr{
+	margin-top: 40px;
+}

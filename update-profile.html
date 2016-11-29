@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update Profile Settings</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/update-profile.css">
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="css/privacy.css">
+	<link rel="stylesheet" href="css/generic-slider.css">
+</head>
+<body>
+	<nav class="navbar w3-blue">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				</button>
+				<a class="navbar-brand" href="#">
+					<img src="http://www.placehold.it/300x50?text=Logo" alt="">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-right" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="profile.html"><span class="glyphicon glyphicon-user"></span> John Doe</a></li>
+
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<span class="glyphicon glyphicon-search"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<input type="text" class="form-control" placeholder="Start typing..." onkeyup="window.location.href='search.html'">
+						</ul>
+					</li>
+
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<span class="glyphicon glyphicon-inbox"></span>
+							<span class="label w3-black">1</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="messages.html"><b>Jane Doe</b> Can you loan me $200 dining dollars?</a></li>
+							<li><a href="messages.html" class="text-center">View All</a></li>
+						</ul>
+					</li>
+
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<span class="glyphicon glyphicon-bell"></span>
+							<span class="label w3-black">3</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="friends.html"><small>11/13</small> Jane Doe added you as a friend</a></li>
+							<li><a href="messages.html"><small>11/12</small> You have 4 new messages</a></li>
+							<li><a href="requests.html"><small>11/11</small> You have 2 financial aid requests</a></li>
+						</ul>
+					</li>
+					<li><a href="friends.html"><i class="fa fa-users" aria-hidden="true"></i></a></li>
+					<li><a href="transactions.html"><i class="fa fa-check" aria-hidden="true"></i></a></li>
+					<li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main class="container">
+		<div class="row">
+			<div class="col-lg-3" id="section-1">
+				<div class="list-group">
+					<a href="#" class="list-group-item active" onclick="updateContent($(this), 'general')">General</a>
+					<a href="#" class="list-group-item" onclick="updateContent($(this), 'privacy')">Privacy</a>
+					<a href="#" class="list-group-item" onclick="updateContent($(this), 'notification')">Notifications</a>
+				</div>
+			</div>
+
+			<div class="col-lg-9" id="section-2">
+
+				<div id="general-settings" class="settings-window">
+					<h2 class="page-header">General Account Settings</h2>
+
+					<!-- Account Type Slider -->
+					<div class="row">
+						<h4 class="col-lg-5">Account Type:</h4>
+						<div class="col-lg-6" align="left">
+							<div class="slider w3-blue">	
+								<input type="checkbox" value="None" id="slider" name="check" onchange="updateBalance(this.checked)"/>
+								<label for="slider"></label>
+							</div>
+						</div>
+					</div>
+
+					<!-- Account Balance -->
+					<div class="row">
+						<h4 class="col-lg-5" title="" id="balance"></h4>
+						<div class="col-lg-3" align="left">
+							<input type="text" class="form-control" placeholder="$0.00">
+						</div>
+					</div>
+
+					<button class="w3-btn w3-blue save-button">Save Changes</button>
+				</div>
+
+				<div id="privacy-settings" class="settings-window" style="display:none">
+					<h2 class="page-header">Privacy Settings</h2>
+
+					<!-- Who can view -->
+					Who can view your
+					<div class="row">
+						<h4 class="col-lg-5">Account Type:</h4>
+						<div class="col-lg-6" align="left">
+							<div class="slider2 w3-blue">	
+								<input type="checkbox" value="None" id="slider2" name="check" onchange="updateBalance(this.checked)"/>
+								<label for="slider2"></label>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<h4 class="col-lg-5">Balance:</h4>
+						<div class="col-lg-6" align="left">
+							<div class="slider2 w3-blue">	
+								<input type="checkbox" value="None" id="slider3" name="check" onchange="updateBalance(this.checked)"/>
+								<label for="slider3"></label>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<h4 class="col-lg-5">Profile:</h4>
+						<div class="col-lg-6" align="left">
+							<div class="slider2 w3-blue">	
+								<input type="checkbox" value="None" id="slider4" name="check" onchange="updateBalance(this.checked)"/>
+								<label for="slider4"></label>
+							</div>
+						</div>
+					</div>
+
+					<button class="w3-btn w3-blue save-button">Save Changes</button>
+				</div>
+
+				<div id="notification-settings" class="settings-window" style="display:none">
+					<h2 class="page-header">Notification Settings</h2>
+
+					<!-- Account Type Slider -->
+					<div class="row">
+						<h4 class="col-lg-5">Receive Email Notifications:</h4>
+						<div class="col-lg-6" align="left">
+							<div class="gen-slider w3-blue">	
+								<input type="checkbox" value="None" id="slide5" name="check" onchange="updateBalance(this.checked)"/>
+								<label for="slide5"></label>
+							</div>
+						</div>
+					</div>
+
+					<button class="w3-btn w3-blue save-button">Save Changes</button>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/update-profile.js"></script>
+	<script>
+		function updateContent(buttonElement, setting){
+			$("#section-1 a").removeClass("active");
+			$(buttonElement).addClass("active");
+			$("#section-2 .settings-window").hide();
+			$("#" + setting + "-settings").show();
+		}
+		$(".save-button").click(function(){
+			$('button').prop('disabled', true);
+			$('button').text("Saved!");
+			setTimeout(function(){ 
+				$('button').prop('disabled', false);
+				$('button').text("Save Changes");
+			}, 2000);
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.main-content{
+	border-left: 1px solid #C6C6C6;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.message{
+	clear: both;
+	margin-top: 30px;
+}
+.bg-gray{
+	background-color: #E2E2E2;
+	color: black;
+}
+.text-left{
+	text-align: left;
+}
+.text-right{
+	text-align: right;
+}
+#message{
+	margin-top: 40px;
+}
+#message div{
+	padding: 0;
+	margin: 0;
+}
+#send{
+	width: 100%;
+}
