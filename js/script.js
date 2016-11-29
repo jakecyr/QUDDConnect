@@ -11,6 +11,10 @@ function loadPage(pageName){
 		contentElement.html(response);
 	};
 
+	// setTimeout(function(){
+	// 	$.get(pageName, callBack);
+	// }, 1000);
+	
 	$.get(pageName, callBack);
 }
 
