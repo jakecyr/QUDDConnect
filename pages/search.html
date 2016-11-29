@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/slider.css">
+<link rel="stylesheet" href="css/search.css">
+
+<main class="container">
+	
+	<div class="row">
+
+		<div class="side-nav col-lg-2">
+			<h4 class="page-header">Filter</h4>
+			
+			<div class="criteria">
+				User type:
+				<div class="slider w3-blue">	
+					<input type="checkbox" value="None" id="slider" name="check" onchange="updateBalance(this.checked)"/>
+					<label for="slider"></label>
+				</div>
+			</div>
+			
+			<div class="criteria">
+				<div id="type"></div>
+				<input type="number"  class="form-control" placeholder="$0.00">
+			</div>
+
+			<button class="w3-btn w3-blue">Update</button>
+		</div>
+
+		<div class="main-content col-lg-10">
+			<!-- Title and search bar -->
+			<div class="row">
+				<h2 class="page-header col-lg-6">
+					Search for People
+				</h2>
+
+				<div class="col-lg-6">
+					<input type="text" class="form-control" placeholder="Start typing a name..." value="J">
+				</div>
+			</div>
+
+			<!-- Search results -->
+			<div class="list-group list-group-hover">
+				<a class="list-group-item">Jon Snow
+					<div style="float:right;">
+						<span class="label label-success">Buyer</span>
+						<span class="label label-primary">$300.00</span>
+					</div>
+				</a>
+				<a class="list-group-item" href="user-profile.html">John Smith
+					<div style="float:right;">
+						<span class="label label-warning">Seller</span>
+						<span class="label label-primary">$123.00</span>
+					</div>
+				</a>
+				<a class="list-group-item" href="user-profile2.html">Jane Doe
+					<div style="float:right;">
+						<span class="label label-success">Buyer</span>
+						<span class="label label-primary">$100.00</span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</main>
+
+<script src="js/main-page.js"></script>
+<script>
+	function updateBalance(checkBoxState){
+		if(checkBoxState){
+			$("#type").text("Buying:");
+		}
+		else{
+			$("#type").text("Selling:");
+		}
+	}
+
+	updateBalance();
+</script>

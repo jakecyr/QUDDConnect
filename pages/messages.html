@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/messages.css">
+
+<main class="container">
+	<div class="row">
+		<!-- List of all messages -->
+		<div class="col-lg-3 side-nav">
+			<div>
+				John Smith
+				<span style="float:right" class="label w3-black">4</span>
+			</div>
+			<hr>
+			<div>
+				Jane Doe
+				<span style="float:right" class="label w3-black">3</span>
+			</div>
+			<hr>
+			<div>
+				Dr. Ruby
+				<span style="float:right" class="label w3-black">2</span>
+			</div>
+			<hr>
+			<div>
+				Professor Christov
+				<span style="float:right" class="label w3-black">1</span>
+			</div>
+			<hr>
+		</div>
+
+		<!-- Active message window -->
+		<div class="col-lg-9 main-content">
+			<h1 class="page-header">John Smith</h1>
+			
+			<div class="message-box" style="overflow-y: scroll;height:300px">
+				<div class="left w3-blue w3-btn message">
+					Hello, are you still selling dining dollars?
+				</div>
+				<div class="right bg-gray w3-btn message">
+					Yea! How much do you want to buy?
+				</div>
+				<div class="left w3-blue w3-btn message text-left">
+					I ate way too much and I need enough to last <br>another 2 months. Can I buy $200?
+				</div>
+				<div class="right bg-gray w3-btn message text-right">
+					Sure no problem! When would you like to meet at<br> the library to transfer?
+				</div>
+				<div class="left w3-blue w3-btn message text-left">
+					Tomorrow at 2?
+				</div>
+				<div class="right bg-gray w3-btn message text-right">
+					Perfect, see you then
+				</div>
+			</div>
+
+			<div class="message-input-box" id="message" style="">
+				<div class="row">
+					<div class="col-lg-10">
+						<input type="text" placeholder="Type message here..." class="form-control" id="message-text">
+					</div>
+					<div class="col-lg-2">
+						<button class="w3-btn w3-blue" id="send" onclick="sendMessage()">Send</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</main>
+
+<script src="js/main-page.js"></script>
+<script>
+	function sendMessage(){
+		var message = $("#message-text").val();
+		$("#message-text").val("");
+		$(".message-box").append("<div class='right bg-gray w3-btn message text-right'>" + message + "</div>");
+		$('.message-box').stop().animate({
+			scrollTop: $('.message-box')[0].scrollHeight
+		}, 800);
+
+	}
+
+	$('.message-box').stop().animate({
+		scrollTop: $('.message-box')[0].scrollHeight
+	}, 800);
+</script>

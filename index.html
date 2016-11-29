@@ -6,68 +6,27 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/loader.css">
 </head>
 <body>
-	<nav class="navbar w3-blue">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span> 
-				</button>
-				<a class="navbar-brand" href="#">
-					<img src="http://www.placehold.it/300x50?text=Logo" alt="">
-				</a>
-			</div>
-			<div class="navbar-right" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li>
-						<a class="login-input">
-							<input class="form-control" type="text" placeholder="Username">
-						</a>
-					</li>
+	<main id="main-content-container"></main>
 
-					<li>
-						<a class="login-input">
-							<input class="form-control" type="password" placeholder="Password">
-						</a>
-					</li>
-				
-					<a href="profile.html" class="w3-btn w3-black">Login</a>
-				</ul>
-			</div>
+	<div id="loader-container" style="display:none">
+		<div class="sk-cube-grid">
+		  <div class="sk-cube sk-cube1"></div>
+		  <div class="sk-cube sk-cube2"></div>
+		  <div class="sk-cube sk-cube3"></div>
+		  <div class="sk-cube sk-cube4"></div>
+		  <div class="sk-cube sk-cube5"></div>
+		  <div class="sk-cube sk-cube6"></div>
+		  <div class="sk-cube sk-cube7"></div>
+		  <div class="sk-cube sk-cube8"></div>
+		  <div class="sk-cube sk-cube9"></div>
 		</div>
-	</nav>
-
-	<header>
-		<div class="jumbotron">
-			<div class="row">
-				<div class="col-lg-8" align="center">
-					<h1 class="page-header">Welcome to QUDD Connect</h1>
-					<img src="http://www.placehold.it/600x300?text=Background%20Image" class="img-responsive" alt="">
-				</div>
-				<div class="col-lg-3 hidden-md hidden-sm hidden-xs ">
-					<div class="bg-dark-gray register-section w3-card-8 container">
-						<h2>Sign up</h2>
-						<h4><small>Fill out the simple form below to get started</small></h4>
-						<input type="text" class="form-control" placeholder="Full name">
-						<input type="text" class="form-control" placeholder="Email">
-						<input type="password" class="form-control" placeholder="Password">
-						<input type="password" class="form-control" placeholder="Confirm">
-						<a href="update-profile.html" class="w3-btn w3-blue">Sign up</a>
-					</div>
-
-					<hr>
-					<h4 class="text-center"><small>&copy; 2016 QUDD Connect. All rights reserved</small></h4>
-					<div class="clear"></div>
-				</div>
-			</div>
-		</div>
-	</header>
+	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
 </body>
 </html>
