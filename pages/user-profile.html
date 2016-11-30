@@ -6,7 +6,8 @@
 			<img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="" class="img-responsive">
 		</div>
 		<div class="col-lg-5">
-			<h1>John Smith
+			<h1>
+				<span id="username">John Smith</span>
 				<br><small><b>Current Status:</b> Seller
 				<br><b>Selling:</b> $123.00
 				<br><b>Experience Rating:</b> 
@@ -22,7 +23,7 @@
 	</div>
 	<div class="col-lg-3">
 		<a href="messages.html" class="w3-btn w3-blue">Contact</a>
-		<button class="w3-btn w3-green" onclick="$(this).attr('disabled', 'disabled')">Friend</button>
+		<button class="w3-btn w3-green" disabled="true">Friends</button>
 		<button class="w3-btn w3-red">Block</button>
 		<div class="clear"></div>
 	</div>
@@ -100,3 +101,8 @@
 </div>
 
 <script src="js/main-page.js"></script>
+<script>
+	if(getParam("username") != ""){
+		$("#username").val(getParam("username"));
+	}
+</script>

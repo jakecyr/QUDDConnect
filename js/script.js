@@ -18,4 +18,26 @@ function loadPage(pageName){
 	$.get(pageName, callBack);
 }
 
+function replaceParam(paramName, newValue){
+	var currentURL = window.location.href;
+	var re = new RegExp(paramName + "=(.+)&?");
+
+	currentURL = currentURL.replace(re, newValue);
+	window.history.pushState({}, null, currentURL);
+
+
+	return currentURL;
+}
+
+function getParam(name) {
+	var url = window.location;
+
+    if (!url) url = location.href;
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp( regexS );
+    var results = regex.exec( url );
+    return results == null ? null : results[1];
+}
+
 loadPage("home");

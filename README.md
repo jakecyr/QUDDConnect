@@ -9,4 +9,8 @@ To run the code:
 2. Clone the git repo containing the code and move the code folder to the MAMP htdocs folder
 3. Run the MAMP servers
 4. Go to localhost:8888 to view the code running
+<<<<<<< HEAD
 	- Any change you make to the code in the htdocs folder will be visible once you refresh the page
+=======
+	- Any change you make to the code in the htdocs folder will be visible once you refresh the page
+>>>>>>> dd9d734e24fabc4b51197bd933123fb32a467bdb
