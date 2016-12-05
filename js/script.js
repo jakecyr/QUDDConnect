@@ -125,6 +125,7 @@ function addParam(key, value){
 		baseURL += key + "=" + value;
 	}
 
+	//Update the URL without refreshing the page
 	window.history.pushState({}, null, baseURL);
 	return baseURL;
 }
@@ -159,22 +160,30 @@ function toTitleCase(str){
 	return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 }
 
+//Return the value of a specified parameter in the URL
 function getParamValue(key){
+	//Get an object containing all of the parameters
 	var params = getParams();
 
+	//Make sure there are parameters in the URL
 	if(params != null){
+		//Make sure the requested parameter != null
 		if(params[key] != undefined){
 			return params[key];
 		}
 	}
 }
 
+//Upda the username displayed in the navigation
 function updateUsername(username){
 	$("#nav-username").text(" " + username);
 }
 
+//Update the user data object with the current users saved data
 function updateUserData(){
-	$.post("data/users.txt", function(response){
+	var loadURL = "data/users.txt";
+
+	var callback = function(response){
 		var jsonObj = JSON.parse(response);
 		var username = getParamValue("username");
 
@@ -183,7 +192,9 @@ function updateUserData(){
 			updateUsername(userData.username);
 			return true;
 		}
-	});
+	};
+
+	$.post(loadURL, callback);
 }
 
 //Log text or an object to the console (quicker for testing)

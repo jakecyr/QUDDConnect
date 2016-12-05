@@ -1,11 +1,14 @@
 //Add each friend the current user has to the page
 $.each(userData.friends, function(i, value){
+	print(value);
 	var newFriend = $(".friend-template");
 	newFriend.find(".name").text(value.username);
 	newFriend.find("img").attr("src", "images/" + value.image);
+	newFriend.find(".name-link").attr("onclick", "addParam('profile', '" + value.short + "');loadPage('user.html');")
 	$("#friend-container").append("<hr>" + newFriend.html());
 });
 
+//Update the count of friends in the header
 updateCount();
 
 //Remove the friend from the page and update the count

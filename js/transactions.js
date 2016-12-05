@@ -19,6 +19,7 @@ function updateRating(starClicked){
 	}
 }
 
+//Set the "rate" button to "rated"
 function saveRating(){
 	$("#rated").attr("disabled", "disabled").text("Rated");
 }
