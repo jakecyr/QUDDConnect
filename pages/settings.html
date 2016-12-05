@@ -1,9 +1,8 @@
 <link rel="stylesheet" href="css/update-profile.css">
-<link rel="stylesheet" href="css/nav.css">
 <link rel="stylesheet" href="css/privacy.css">
 <link rel="stylesheet" href="css/generic-slider.css">
 
-<main class="container">
+<div class="container top-margin">
 	<div class="row">
 		<div class="col-lg-3" id="section-1">
 			<div class="list-group">
@@ -96,23 +95,6 @@
 			</div>
 		</div>
 	</div>
-</main>
+</div>
 
-<script src="js/main-page.js"></script>
-<script src="js/update-profile.js"></script>
-<script>
-	function updateContent(buttonElement, setting){
-		$("#section-1 a").removeClass("active");
-		$(buttonElement).addClass("active");
-		$("#section-2 .settings-window").hide();
-		$("#" + setting + "-settings").show();
-	}
-	$(".save-button").click(function(){
-		$('button').prop('disabled', true);
-		$('button').text("Saved!");
-		setTimeout(function(){ 
-			$('button').prop('disabled', false);
-			$('button').text("Save Changes");
-		}, 2000);
-	});
-</script>
+<script src="js/settings.js"></script>

@@ -1,2 +1,0 @@
-- Only allow users to contact their friends
-- 

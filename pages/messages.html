@@ -1,7 +1,8 @@
-<link rel="stylesheet" href="css/nav.css">
 <link rel="stylesheet" href="css/messages.css">
 
-<main class="container">
+<div class="clear"></div>
+
+<div class="top-margin container">
 	<div class="row">
 		<!-- List of all messages -->
 		<div class="col-lg-3 side-nav">
@@ -30,7 +31,7 @@
 		<!-- Active message window -->
 		<div class="col-lg-9 main-content">
 			<h1 class="page-header">John Smith</h1>
-			
+
 			<div class="message-box" style="overflow-y: scroll;height:300px">
 				<div class="left w3-blue w3-btn message">
 					Hello, are you still selling dining dollars?
@@ -63,23 +64,7 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
-</main>
+</div>
 
-<script src="js/main-page.js"></script>
-<script>
-	function sendMessage(){
-		var message = $("#message-text").val();
-		$("#message-text").val("");
-		$(".message-box").append("<div class='right bg-gray w3-btn message text-right'>" + message + "</div>");
-		$('.message-box').stop().animate({
-			scrollTop: $('.message-box')[0].scrollHeight
-		}, 800);
-
-	}
-
-	$('.message-box').stop().animate({
-		scrollTop: $('.message-box')[0].scrollHeight
-	}, 800);
-</script>
+<script src="js/messages.js"></script>

@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="css/nav.css">
-
-<main class="container">
+<div class="container top-margin">
 	<div class="row">
 		<div class="col-lg-3">
 			<img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="" class="img-responsive">
@@ -29,7 +27,7 @@
 	<div class="col-lg-3">
 		<button class="w3-btn w3-black" id="edit" onclick="editProfile()">Edit Profile</button>
 		<button class="w3-btn w3-black" id="save" style="display:none" onclick="saveProfile()">Save Profile</button>
-		<button onclick="loadPage('update-profile')" class="w3-btn w3-black"><i class="fa fa-cog" aria-hidden="true"></i></button>	
+		<button onclick="loadPage('settings')" class="w3-btn w3-black"><i class="fa fa-cog" aria-hidden="true"></i></button>	
 		<div class="clear"></div>
 	</div>
 </div>
@@ -74,24 +72,6 @@
 		</tr>
 	</tbody>
 </table>
-</main>
+</div>
 
-<script src="js/main-page.js"></script>
-<script>
-	function editProfile(){
-		for(var i = 0; i < $(".editable").length;i++){
-			$(".editable:eq(" + i + ")").html("<input value='" + $(".editable:eq(" + i + ")").text() + "'>");
-		}
-		$("#edit").hide();
-		$("#save").show();
-		$("#pro-pic").show();
-	}
-	function saveProfile(){
-		for(var i = 0; i < $(".editable").length;i++){
-			$(".editable:eq(" + i + ")").html($(".editable:eq(" + i + ") input").val());
-		}
-		$("#save").hide();
-		$("#pro-pic").hide();
-		$("#edit").show();
-	}
-</script>
+<script src="js/profile.js"></script>
