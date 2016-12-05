@@ -9,11 +9,11 @@
 				<div class="bg-dark-gray register-section w3-card-8 container">
 					<h2>Sign up</h2>
 					<h4><small>Fill out the simple form below to get started</small></h4>
-					<input type="text" class="form-control" placeholder="Full name">
+					<input type="text" class="form-control" placeholder="Full name" id="full-name">
 					<input type="text" class="form-control" placeholder="Email">
 					<input type="password" class="form-control" placeholder="Password">
 					<input type="password" class="form-control" placeholder="Confirm">
-					<button onclick="loadPage('settings')" class="w3-btn w3-blue">Sign up</button>
+					<button onclick="register()" class="w3-btn w3-blue">Sign up</button>
 				</div>
 
 				<hr>
@@ -23,3 +23,15 @@
 		</div>
 	</div>
 </header>
+
+<script>
+	function register(){
+		var name = $("#full-name").val();
+
+		if(name != ""){
+			addParam("username", name);
+			loadPage('settings.html');
+			updateUsername(name);
+		}
+	}
+</script>

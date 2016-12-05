@@ -1,3 +1,5 @@
+var userData = {};
+
 //Prevent Ajax from caching the page content for testing
 $.ajax({
 	cache: false
@@ -6,16 +8,21 @@ $.ajax({
 //Load the navigation bar
 $.get("includes/nav.html", function(response){
 	$("nav").html(response);
+
+	//Check if the user is on a page other than home
+	var page = (getParams() == null ? "home.html": getParams().page);
+
+	//Load the page content
+	loadPage(page);
+
+	//Load the user's data
+	updateUserData();
 });
-
-//Check if the user is on a page other than home
-var page = (getParams() == null ? "home": getParams().page);
-
-//Load the page content
-loadPage(page);
 
 //Load the specified page content
 function loadPage(pageName){
+
+	updateUserData();
 
 	//Get the parameters from the URL query string
 	var params = getParams();
@@ -23,14 +30,16 @@ function loadPage(pageName){
 	//Add/Replace the current page in the URL with the new page
 	addParam("page", pageName);
 
+	shortPageName = pageName.split(".")[0];
+	
 	//Update the navigation bar (nav changes when on home screen)
-	updateNavigationBar(pageName);
+	updateNavigationBar(shortPageName);
 
 	//Update the title element to reflect the new page name
-	updateTitleElement(pageName);
+	updateTitleElement(shortPageName);
 
 	//Format the page name for the POST request
-	pageName = "pages/" + pageName + ".html";
+	pageName = "pages/" + pageName;
 
 	//Get the main content element where the new content will go
 	var contentElement = $("#main-content-container");
@@ -148,6 +157,33 @@ function getParams(){
 //Capitalizes the first letter of each word
 function toTitleCase(str){
 	return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+
+function getParamValue(key){
+	var params = getParams();
+
+	if(params != null){
+		if(params[key] != undefined){
+			return params[key];
+		}
+	}
+}
+
+function updateUsername(username){
+	$("#nav-username").text(" " + username);
+}
+
+function updateUserData(){
+	$.post("data/users.txt", function(response){
+		var jsonObj = JSON.parse(response);
+		var username = getParamValue("username");
+
+		if(jsonObj[username] != undefined){
+			userData = jsonObj[username];
+			updateUsername(userData.username);
+			return true;
+		}
+	});
 }
 
 //Log text or an object to the console (quicker for testing)

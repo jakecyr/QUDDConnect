@@ -1,0 +1,70 @@
+<div class="container top-margin">
+	<div class="row">
+		<div class="col-lg-3">
+			<img id="profile-pic" alt="" class="img-responsive">
+		</div>
+		<div class="col-lg-5">
+			<h1><span class="editable" id="profile-name">John Doe</span>
+				<br><small><b>Current Status:</b> <span class="editable" id="profile-type">Seller</span>
+				<br><b>Selling:</b> <span class="editable" id="profile-amount">$123.00</span>
+				<br><b>Experience Rating:</b> 
+
+				<span id="rating-stars"></span>
+
+				<br><b>Points:</b> <span id="profile-points">1000</span>
+
+				<div class="clear"></div>
+
+				<span id="pro-pic" style="display:none;">
+					<b>Update Profile Picture:</b>
+					<input type="file" id="fileToUpload">
+				</span>
+			</small>
+		</h1>
+		<button class="w3-btn w3-black" data-toggle="modal" data-target="#myModal" id="finaid">Request Financial Aid</button>
+	</div>
+	<div class="col-lg-3">
+		<a href="#" onclick="loadPage('messages.html')" class="w3-btn w3-blue">Contact</a>
+		<button class="w3-btn w3-green" disabled="true">Friends</button>
+		<button class="w3-btn w3-red">Block</button>
+		<div class="clear"></div>
+	</div>
+</div>
+
+<hr>
+
+<h2>Recent Feedback</h2>
+<table class="table table-responsive table-hover" id="rating-table">
+	<tbody></tbody>
+</table>
+</div>
+
+<!-- Request Financial Aid Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Request Financial Aid From John Doe</h4>
+			</div>
+			<div class="modal-body">
+				Amount of Dining Dollars to Request:
+				<input class="form-control" type="number" placeholder="$0.00">
+
+				<div class="clear"></div>
+
+				Message:
+				<input type="text" placeholder="Enter message here..." class="form-control">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="w3-btn w3-blue" data-dismiss="modal" onclick="$('#finaid').attr('disabled', 'disabled').text('Financial Aid Request Sent')">Send Request</button>
+				<button type="button" class="w3-btn w3-red" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<script src="js/user-profile.js"></script>

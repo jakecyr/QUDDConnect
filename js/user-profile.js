@@ -1,9 +1,19 @@
-fillInUserProfile();
+var data = {};
+
+$.post("data/users.txt", function(response){
+	var jsonObj = JSON.parse(response);
+	var username = getParamValue("profile");
+
+	if(jsonObj[username] != undefined){
+		data = jsonObj[username];
+		fillInUserProfile();
+	}
+});
 
 function fillInUserProfile(){
-	$("#profile-name").text(userData.username);
+	$("#profile-name").text(data.username);
 
-	var userRating = userData.rating;
+	var userRating = data.rating;
 
 	for(var i = 0; i < parseInt(userRating); i++){
 		$("#rating-stars").append("<i class='fa fa-star'></i>");
@@ -13,12 +23,12 @@ function fillInUserProfile(){
 		$("#rating-stars").append("<i class='fa fa-star-o'></i>");
 	}
 
-	$("#profile-points").text(userData.points);
-	$("#profile-amount").text("$" + (userData.amount));
-	$("#profile-type").text(userData.type);
-	$("#profile-pic").attr("src", "images/" + userData.image);
+	$("#profile-points").text(data.points);
+	$("#profile-amount").text("$" + (data.amount).toFixed(2));
+	$("#profile-type").text(data.type);
+	$("#profile-pic").attr("src", "images/" + data.image);
 
-	var ratings = userData.ratings;
+	var ratings = data.ratings;
 
 	$.each(ratings, function(i, value){
 		var tableRow = $("<tr></tr>");
@@ -40,21 +50,4 @@ function fillInUserProfile(){
 
 		$("#rating-table").append(tableRow);
 	});
-}
-
-function editProfile(){
-	for(var i = 0; i < $(".editable").length;i++){
-		$(".editable:eq(" + i + ")").html("<input value='" + $(".editable:eq(" + i + ")").text() + "'>");
-	}
-	$("#edit").hide();
-	$("#save").show();
-	$("#pro-pic").show();
-}
-function saveProfile(){
-	for(var i = 0; i < $(".editable").length;i++){
-		$(".editable:eq(" + i + ")").html($(".editable:eq(" + i + ") input").val());
-	}
-	$("#save").hide();
-	$("#pro-pic").hide();
-	$("#edit").show();
 }

@@ -1,0 +1,62 @@
+{
+	"jake":{
+		"username": "Jake Cyr",
+		"password": "test",
+		"image": "man.jpg",
+		"rating": 4.4,
+		"friends": [{"username": "John Smith", "image": "man.jpg"}, {"username": "Jane Doe", "image": "woman.png"}],
+		"type": "Seller",
+		"amount": 125.00,
+		"points": 600,
+		"ratings": [
+	  	{"username": "Professor Christov", "comment": "Great seller!", "rating": 5},
+	  	{"username": "Dr. Ruby", "comment": "Awesome seller!", "rating": 5},
+	  	{"username": "Brian Carducci", "comment": "Good seller", "rating": 4}
+	  ]
+	},
+	"brian":{
+	  "username": "Brian Carducci",
+	  "password": "test",
+	  "image": "man.jpg",
+	  "rating": 5,
+	  "friends": [{"username": "John Smith", "image": "man.jpg"}, {"username": "Jane Doe", "image": "woman.png"}],
+	  "type": "Buyer",
+	  "amount": 150.00,
+	  "points": 250,
+	  "ratings": [
+	  	{"username": "Professor Christov", "comment": "Great seller!", "rating": 5},
+	  	{"username": "Dr. Ruby", "comment": "Awesome seller!", "rating": 5},
+	  	{"username": "Jake Cyr", "comment": "Good seller", "rating": 4}
+	  ]
+	},
+	"john":{
+	  "username": "John Smith",
+	  "password": "test",
+	  "image": "man.jpg",
+	  "rating": 2,
+	  "friends": [{"username": "Jake Cyr", "image": "man.jpg"}, {"username": "Brian Carducci", "image": "man.jpg"}],
+	  "type": "Seller",
+	  "amount": 45.00,
+	  "points": 50,
+	  "ratings": [
+	  	{"username": "Professor Christov", "comment": "Great seller!", "rating": 5},
+	  	{"username": "Dr. Ruby", "comment": "Awesome seller!", "rating": 5},
+	  	{"username": "Brian Carducci", "comment": "Good seller", "rating": 4}
+	  ]
+	},
+	"jane":{
+	  "username": "Jane Doe",
+	  "password": "test",
+	  "image": "woman.png",
+	  "rating": 4.5,
+	  "friends": [{"username": "Jake Cyr", "image": "man.jpg"}, {"username": "Brian Carducci", "image": "man.jpg"}],
+	  "type": "Seller",
+	  "amount": 300.00,
+	  "points": 600,
+	  "ratings": [
+	  	{"username": "Professor Christov", "comment": "Great seller!", "rating": 4},
+	  	{"username": "Dr. Ruby", "comment": "Awesome seller!", "rating": 4.5},
+	  	{"username": "Brian Carducci", "comment": "Good seller", "rating": 5}
+	  ]
+	}
+}

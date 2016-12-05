@@ -1,4 +1,4 @@
-<main class="container">
+<div class="container top-margin">
 	<div class="row">
 		<div class="col-lg-3">
 			<img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="" class="img-responsive">
@@ -20,7 +20,7 @@
 		<button class="w3-btn w3-black" data-toggle="modal" data-target="#myModal" id="finaid">Request Financial Aid</button>
 	</div>
 	<div class="col-lg-3">
-		<a href="messages.html" class="w3-btn w3-blue">Contact</a>
+		<a href="#" onclick="loadPage('messages.html')" class="w3-btn w3-blue">Contact</a>
 		<button class="w3-btn w3-green" disabled="true">Friends</button>
 		<button class="w3-btn w3-red">Block</button>
 		<div class="clear"></div>
@@ -68,7 +68,7 @@
 		</tr>
 	</tbody>
 </table>
-</main>
+</div>
 
 <!-- Request Financial Aid Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -98,9 +98,4 @@
 	</div>
 </div>
 
-
-<script>
-	if(getParam("username") != ""){
-		$("#username").val(getParam("username"));
-	}
-</script>
+<script src="js/user-profile.js"></script>
