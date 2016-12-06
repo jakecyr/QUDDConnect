@@ -1,27 +1,73 @@
-<header>
-	<div class="jumbotron">
-		<div class="row">
-			<div class="col-lg-8" align="center">
-				<h1 class="page-header">Welcome to QUDD Connect</h1>
-				<img src="http://www.placehold.it/600x300?text=Background%20Image" class="img-responsive" alt="">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<nav class="navbar w3-blue">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				</button>
+				<a class="navbar-brand" href="#">
+					<img src="http://www.placehold.it/300x50?text=Logo" alt="">
+				</a>
 			</div>
-			<div class="col-lg-3 hidden-md hidden-sm hidden-xs ">
-				<div class="bg-dark-gray register-section w3-card-8 container">
-					<h2>Sign up</h2>
-					<h4><small>Fill out the simple form below to get started</small></h4>
-					<input type="text" class="form-control" placeholder="Full name" id="full-name">
-					<input type="text" class="form-control" placeholder="Email" id="email">
-					<input type="password" class="form-control" placeholder="Password" id="register -password">
-					<input type="password" class="form-control" placeholder="Confirm" id="register-confirm">
-					<button onclick="register()" class="w3-btn w3-blue">Sign up</button>
-				</div>
+			<div class="navbar-right" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li>
+						<a class="login-input">
+							<input class="form-control" type="text" placeholder="Username">
+						</a>
+					</li>
 
-				<hr>
-				<h4 class="text-center"><small>&copy; <span class="year">2016</span> QUDD Connect. All rights reserved</small></h4>
-				<div class="clear"></div>
+					<li>
+						<a class="login-input">
+							<input class="form-control" type="password" placeholder="Password">
+						</a>
+					</li>
+				
+					<a href="profile.html" class="w3-btn w3-black">Login</a>
+				</ul>
 			</div>
 		</div>
-	</div>
-</header>
+	</nav>
 
-<script src="js/home.js"></script>
+	<header>
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-lg-8" align="center">
+					<h1 class="page-header">Welcome to QUDD Connect</h1>
+					<img src="http://www.placehold.it/600x300?text=Background%20Image" class="img-responsive" alt="">
+				</div>
+				<div class="col-lg-3 hidden-md hidden-sm hidden-xs ">
+					<div class="bg-dark-gray register-section w3-card-8 container">
+						<h2>Sign up</h2>
+						<h4><small>Fill out the simple form below to get started</small></h4>
+						<input type="text" class="form-control" placeholder="Full name">
+						<input type="text" class="form-control" placeholder="Email">
+						<input type="password" class="form-control" placeholder="Password">
+						<input type="password" class="form-control" placeholder="Confirm">
+						<a href="update-profile.html" class="w3-btn w3-blue">Sign up</a>
+					</div>
+
+					<hr>
+					<h4 class="text-center"><small>&copy; 2016 QUDD Connect. All rights reserved</small></h4>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

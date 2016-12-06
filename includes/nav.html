@@ -6,7 +6,7 @@
 			<span class="icon-bar"></span> 
 		</button>
 		<a class="navbar-brand" href="#" onclick="loadPage('home.html')">
-			<img src="http://www.placehold.it/300x50?text=Logo" alt="">
+			<img src="images/logo.png" alt="" id="logo">
 		</a>
 	</div>
 	<div class="collapse navbar-collapse navbar-right" id="myNavbar">
@@ -18,7 +18,7 @@
 					<span class="glyphicon glyphicon-search"></span>
 				</a>
 				<ul class="dropdown-menu">
-					<input type="text" class="form-control" placeholder="Start typing..." onkeyup="loadPage('search.html')">
+					<input type="text" class="form-control" placeholder="Start typing..." onkeyup="addParam('search', this.value);loadPage('search.html')">
 				</ul>
 			</li>
 
